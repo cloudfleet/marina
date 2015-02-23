@@ -15,6 +15,10 @@ web UI for automatically building new images from GitHub repositories.
     docker login http://<REGISTRY-DOMAIN>:5000
     docker pull <REGISTRY-DOMAIN>:5000/<image>
 
+## Build the images
+
+    scripts/build_docker_images.sh scripts/docker_images.txt /root/docker_images
+
 ## TODO
 
 - modify the blimp image building scripts to push the built images
