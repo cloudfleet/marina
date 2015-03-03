@@ -4,6 +4,29 @@ An open source alternative to Docker Hub supporting ARM architectures. Extending
 the [Docker Registry](https://github.com/docker/docker-registry) with a simple
 web UI for automatically building new images from GitHub repositories.
 
+## Installation
+
+Set up your ARM-based server with a Debian Jessie image so that it can accessed
+via SSH through <some_IP>. Move into the *scripts/ansible* directory and edit
+*hosts* to:
+
+    [marina]
+    marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=<some_IP>
+
+Copy over your public SSH key to the server (if `ssh-copy-id` is not available,
+  copy the file over manually).
+
+    ssh-copy-id root@<some_IP>
+
+[Install Ansible](http://docs.ansible.com/intro_installation.html). Test that
+the machine is indeed accessible:
+
+    ansible -i ./hosts -m ping marina
+
+Great, now you can run the playbook with:
+
+    TODO
+
 ## Pushing to the registry
 
     docker login http://<REGISTRY-DOMAIN>:5000
