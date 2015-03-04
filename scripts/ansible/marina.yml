@@ -1,0 +1,6 @@
+---
+- hosts: marina
+  sudo: yes
+
+  roles:
+    - marina

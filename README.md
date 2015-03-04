@@ -25,7 +25,7 @@ the machine is indeed accessible:
 
 Great, now you can run the playbook with:
 
-    TODO
+    ansible-playbook marina.yml
 
 ## Pushing to the registry
 

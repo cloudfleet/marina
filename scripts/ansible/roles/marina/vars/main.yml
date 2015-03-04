@@ -1,0 +1,5 @@
+marina:
+  repo:
+    branch: master
+    url: "https://github.com/cloudfleet/marina.git"
+  home: "{{ansible_env.HOME}}/marina"
