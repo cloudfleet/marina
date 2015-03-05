@@ -1,5 +1,6 @@
 ---
 - include: apt.yml
 - include: git.yml
+- include: build_images.yml
 - hostname: name=marina
-# TODO: build images manually
+# TODO: mount and pull image source to USB if avilable

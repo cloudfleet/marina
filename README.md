@@ -7,16 +7,16 @@ web UI for automatically building new images from GitHub repositories.
 ## Installation
 
 Set up your ARM-based server with a Debian Jessie image so that it can accessed
-via SSH through <some_IP>. Move into the *scripts/ansible* directory and edit
+via SSH through *some_ip*. Move into the *scripts/ansible* directory and edit
 *hosts* to:
 
     [marina]
-    marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=<some_IP>
+    marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=some_ip
 
 Copy over your public SSH key to the server (if `ssh-copy-id` is not available,
   copy the file over manually).
 
-    ssh-copy-id root@<some_IP>
+    ssh-copy-id root@some_ip
 
 [Install Ansible](http://docs.ansible.com/intro_installation.html). Test that
 the machine is indeed accessible:
