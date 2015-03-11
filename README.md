@@ -27,6 +27,10 @@ Great, now you can run the playbook with:
 
     ansible-playbook marina.yml
 
+Later, to just rebuild the images run:
+
+    ansible-playbook marina.yml -t build
+
 ## Pushing to the registry
 
     docker login http://<REGISTRY-DOMAIN>:5000

@@ -16,7 +16,8 @@ function fetch_code(){
     branch=$3
     if [ -d $repo_dir ]; then
         # if true this block of code will execute
-        echo "folder exists, not cloning" # pull changes?
+        echo "folder exists, pulling changes"
+        (cd $repo_dir; git pull)
     else
         echo "cloning $line"
         git clone --depth=1 --branch $branch $repo_url $repo_dir
