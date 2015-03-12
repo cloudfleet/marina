@@ -31,6 +31,10 @@ Later, to just rebuild the images run:
 
     ansible-playbook marina.yml -t build
 
+To skip the building do:
+
+    ansible-playbook marina.yml --skip-tags=build
+
 ## Pushing to the registry
 
     docker login http://<REGISTRY-DOMAIN>:5000
@@ -52,3 +56,6 @@ Later, to just rebuild the images run:
   to the registry
 - Make sure it uses HTTPS:
   https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
+
+- build images on external media (usb)
+- add scripts to clean old/deleted containers/images

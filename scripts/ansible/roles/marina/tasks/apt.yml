@@ -6,6 +6,7 @@
    - avahi-daemon # for easier access - ssh root@marina.local
    - git-core
    - docker.io
+   - python-docker
   tags:
    - marina
    - packages

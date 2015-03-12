@@ -1,6 +1,7 @@
 ---
+- hostname: name=marina
 - include: apt.yml
 - include: git.yml
 - include: build_images.yml
-- hostname: name=marina
+- include: registry.yml
 # TODO: mount and pull image source to USB if avilable
