@@ -1,9 +1,9 @@
 ---
 - name: clean | delete <none> images
   # TODO: command instead of shell?
-  shell:  "{{ marina.home }}/scripts/clean_docker_none_images.sh"
+  shell:  "{{ marina.src }}/scripts/clean_docker_none_images.sh"
   args:
-    chdir: "{{ marina.home }}/scripts"
+    chdir: "{{ marina.src }}/scripts"
   tags:
     - marina
     - clean
