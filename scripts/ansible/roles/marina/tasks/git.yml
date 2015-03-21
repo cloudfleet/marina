@@ -1,7 +1,7 @@
 ---
 - name: git | Pull marina source from the repository.
   git: repo={{ marina.repo.url }}
-       dest={{ marina.home }}
+       dest={{ marina.src }}
        version={{ marina.repo.branch }}
   tags:
     - marina

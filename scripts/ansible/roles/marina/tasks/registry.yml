@@ -1,5 +1,5 @@
 ---
 - name: registry | start the Docker Registry container
-  docker: name=registry image=registry ports=5000
+  docker: name=registry image=library/registry ports=5000
   tags:
     - marina
