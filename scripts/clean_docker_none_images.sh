@@ -6,7 +6,12 @@
 #docker rmi $(docker images -qa)
 
 # remove all exited containers
-docker rm $(docker ps -aq -f status=exited)
+if [[ -n $(docker ps -aq -f status=exited) ]]; then
+    docker rm $(docker ps -aq -f status=exited)
+fi
 
 # remove <none> images
-docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+if [[ -n $(docker images -q --filter "dangling=true") ]]; then
+    docker rmi $(docker images -q --filter "dangling=true")
+    # docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+fi
