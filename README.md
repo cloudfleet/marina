@@ -56,6 +56,8 @@ To skip the building do:
   to the registry
 - Make sure it uses HTTPS:
   https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
+- or using containers:
+  https://registry.hub.docker.com/u/marvambass/nginx-registry-proxy/
 
 - build images on external media (usb)
 - add scripts to clean old/deleted containers/images
