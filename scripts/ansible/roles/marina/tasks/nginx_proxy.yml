@@ -6,6 +6,7 @@
     ports: 443:443
     links: registry:registry
     volumes: "{{ marina.security }}:/etc/nginx/external"
+    env:
+      DH_SIZE: "{{ marina.dh_size }}"
   tags:
     - marina
-    - debug

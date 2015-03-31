@@ -5,3 +5,5 @@ marina:
   home: "{{ansible_env.HOME}}"
   src: "{{ansible_env.HOME}}/marina"
   security: "{{ansible_env.HOME}}/security"
+  dh_size: "{{lookup('env','DH_SIZE') | default('512')}}"
+  # 512 for development purposes - use 2048 in production

@@ -8,5 +8,6 @@
 - include: copy_certificates.yml
 - include: nginx_proxy.yml
 # TODO: mount and pull image source to USB if avilable
+# - usbmount
 # TODO: only build registry (conditionally if it doesn't exist)
 #   and call building the other images as a separate task
