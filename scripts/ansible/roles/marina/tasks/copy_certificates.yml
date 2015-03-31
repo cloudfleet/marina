@@ -1,0 +1,9 @@
+---
+- name: copy_certificates | Copy SSL keypair and the htpasswed file
+  synchronize:
+    src: "security/"
+    dest: "{{ marina.security }}"
+    mode: 0600
+  tags:
+    - marina
+    - debug

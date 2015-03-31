@@ -6,6 +6,8 @@ web UI for automatically building new images from GitHub repositories.
 
 ## Installation
 
+### Basic server setup
+
 Set up your ARM-based server with a Debian Jessie image so that it can accessed
 via SSH through *some_ip*. Move into the *scripts/ansible* directory and edit
 *hosts* to:
@@ -17,6 +19,23 @@ Copy over your public SSH key to the server (if `ssh-copy-id` is not available,
   copy the file over manually).
 
     ssh-copy-id root@some_ip
+
+### Keeping things secure
+
+Create an SSL certificate. If you want to self-sign it do:
+
+    openssl req -x509 -newkey rsa:4086 -keyout key.pem -out cert.pem \
+    -days 3650 -nodes
+
+Create the user accounts:
+
+    htpasswd -c docker-registry.htpasswd user1 # for the first user
+    htpasswd docker-registry.htpasswd userN # for every subsequent user
+
+Copy these files as `key.pem`, `cert.pem` and `htpasswd-registry.pem` to
+*scripts/ansible/security/*.
+
+### Ansible scripts for deploying
 
 [Install Ansible](http://docs.ansible.com/intro_installation.html). Test that
 the machine is indeed accessible:
@@ -58,6 +77,8 @@ To skip the building do:
   https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
 - or using containers:
   https://registry.hub.docker.com/u/marvambass/nginx-registry-proxy/
+- even more tutorials:
+  http://allthelayers.com/2014/11/setting-up-a-private-docker-registry-over-https/
 
 - build images on external media (usb)
 - add scripts to clean old/deleted containers/images

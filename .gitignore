@@ -52,3 +52,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+
+# nginx-proxy security files
+docker-registry.htpasswd
+key.pem
+cert.pem

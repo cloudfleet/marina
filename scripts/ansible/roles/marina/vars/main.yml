@@ -4,3 +4,4 @@ marina:
     url: "https://github.com/cloudfleet/marina.git"
   home: "{{ansible_env.HOME}}"
   src: "{{ansible_env.HOME}}/marina"
+  security: "{{ansible_env.HOME}}/security"
