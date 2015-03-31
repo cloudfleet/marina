@@ -37,6 +37,7 @@ function tag_images(){
     docker tag library/node-armhf node
     docker tag library/nginx-armhf nginx
     docker tag mazzolino/armhf-debian debian
+    docker tag mazzolino/armhf-debian debian:wheezy # for nginx
     docker tag hominidae/armhf-ubuntu ubuntu
     docker tag library/registry registry
 }
