@@ -46,6 +46,8 @@ Great, now you can run the playbook with:
 
     ansible-playbook marina.yml
 
+#### Other options
+
 Later, to just rebuild the images run:
 
     ansible-playbook marina.yml -t build
@@ -53,6 +55,10 @@ Later, to just rebuild the images run:
 To skip the building do:
 
     ansible-playbook marina.yml --skip-tags=build
+
+To set some non-default options, you can pass them as env. vars:
+
+    PAGEKITE_SECRET="mypwd" DH_SIZE=512 ansible-playbook marina.yml
 
 ## Pushing to the registry
 

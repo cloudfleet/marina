@@ -2,10 +2,16 @@
 - name: setup pagekite repository
   sudo: yes
   apt_repository: repo='deb http://pagekite.net/pk/deb/ pagekite main' state=present
+  tags:
+    - pagekite
+    - install
 
 - name: get repository key for pagekite
   sudo: yes
   command: apt-key adv --recv-keys --keyserver keys.gnupg.net AED248B1C7B2CAC3
+  tags:
+    - pagekite
+    - install
 
 - name: install pagekite
   sudo: yes
@@ -16,3 +22,6 @@
     - g++
     - make
     - pagekite
+  tags:
+    - pagekite
+    - install

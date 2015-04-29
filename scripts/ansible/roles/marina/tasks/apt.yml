@@ -9,4 +9,5 @@
    - python-docker
   tags:
    - marina
+   - install
    - packages
