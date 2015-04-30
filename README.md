@@ -58,7 +58,9 @@ To skip the building do:
 
 To set some non-default options, you can pass them as env. vars:
 
-    PAGEKITE_SECRET="mypwd" DH_SIZE=512 ansible-playbook marina.yml
+    PAGEKITE_SECRET="mypwd" DH_SIZE=512 REG_USER=test REG_PW=testpw \
+      REG_EMAIL=test@example.com ansible-playbook marina.yml
+
 
 ## Pushing to the registry
 

@@ -5,3 +5,4 @@
        version={{ marina.repo.branch }}
   tags:
     - marina
+    - push

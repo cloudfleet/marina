@@ -3,3 +3,4 @@
   docker: name=registry image=library/registry ports=5000
   tags:
     - marina
+    - registry

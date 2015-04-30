@@ -7,6 +7,7 @@
 - include: clean.yml
 - include: copy_certificates.yml
 - include: nginx_proxy.yml
+- include: push_images.yml
 # TODO: mount and pull image source to USB if avilable
 # - usbmount
 # TODO: only build registry (conditionally if it doesn't exist)
