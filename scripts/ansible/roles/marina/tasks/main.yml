@@ -1,5 +1,6 @@
 ---
-- hostname: name=marina
+- hostname: name={{ marina.hostname }}
+- include: hosts.yml
 - include: apt.yml
 - include: git.yml
 - include: build_images.yml

@@ -1,4 +1,5 @@
 marina:
+  hostname: "{{lookup('env','MARINA_HOSTNAME') | default('marina')}}"
   repo:
     branch: master
     url: "https://github.com/cloudfleet/marina.git"
@@ -11,3 +12,4 @@ marina:
     user: "{{lookup('env','REG_USER') | default('test')}}"
     pw: "{{lookup('env','REG_PW') | default('testpw')}}"
     email: "{{lookup('env','REG_EMAIL') | default('test@example.com')}}"
+    domain: "{{lookup('env','REG_DOMAIN') | default('registry.marina.io')}}"

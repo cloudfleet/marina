@@ -6,13 +6,13 @@
 #    username
 #    password
 #    email
+#    registry.marina.io
 
 docker_images_file=$1
 username=$2
 password=$3
 email=$4
-# TODO: parametrize this
-registry="https://registry.marina.io:443/"
+registry=$5
 
 function push_image(){
     repo_url=$1
@@ -20,14 +20,16 @@ function push_image(){
     branch=$3
     dockerfile_path=$4
     #image_name=`echo "$image_name" | sed 's/./\L&/g'` # lowercase
-    registry_image_name=$registry$image_name
+    registry_image_name=$registry/$image_name
+    echo "tagging $image_name as $registry_image_name"
+    docker tag $image_name $registry_image_name
     echo "pushing Docker image $registry_image_name"
     docker push $registry_image_name
 }
 
 function registry_login(){
     echo "logging into $registry"
-    docker login $registry -u $username -p $password -e $email
+    docker login -u $username -p $password -e $email $registry
 }
 
 function push_all_images(){
@@ -36,8 +38,6 @@ function push_all_images(){
     while read line; do
         push_image $line
     done < $docker_images_file
-
-    #clean_up
 }
 
 push_all_images
