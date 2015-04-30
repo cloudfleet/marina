@@ -9,6 +9,7 @@ marina:
   dh_size: "{{lookup('env','DH_SIZE') | default('512', true)}}"
   # 512 for development purposes - use 2048 in production
   registry:
+    storage: "/media/usb/registry"
     user: "{{lookup('env','REG_USER') | default('test', true)}}"
     pw: "{{lookup('env','REG_PW') | default('testpw', true)}}"
     email: "{{lookup('env','REG_EMAIL') | default('test@example.com', true)}}"

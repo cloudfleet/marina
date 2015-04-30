@@ -3,11 +3,11 @@
   #shell:  #build_docker_images.sh docker_images.txt /root/docker_images
   # not working with chdir for some reason
   # TODO: command instead of shell
-  shell:  "{{ marina.src }}/scripts/build_docker_images.sh {{ marina.src }}/scripts/docker_images.txt {{ marina.home }}/docker_images"
+  shell:  "{{ marina.src }}/scripts/build_docker_images.sh {{ marina.src }}/scripts/docker_images-registry.txt {{ marina.home }}/docker_images"
   #debug: msg="{{ marina.src }}/scripts"
   args:
     chdir: "{{ marina.src }}/scripts"
   tags:
     - marina
     - build
-    - blimp
+    - registry

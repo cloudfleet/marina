@@ -10,3 +10,4 @@
       DH_SIZE: "{{ marina.dh_size }}"
   tags:
     - marina
+    - nginx
