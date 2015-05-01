@@ -6,4 +6,4 @@ https://github.com/cloudfleet/blimp-mailbox.git cloudfleet/blimp-mailbox master 
 https://github.com/cloudfleet/blimp-mailpile.git cloudfleet/blimp-mailpile master /
 https://github.com/cloudfleet/blimp-wellknown.git cloudfleet/blimp-wellknown master /
 https://github.com/cloudfleet/blimp-radicale.git cloudfleet/blimp-radicale master /
-https://github.com/cloudfleet/blimp-cockpit.git cloudfleet/blimp-cockpit master /
+https://github.com/cloudfleet/blimp-cockpit.git cloudfleet/blimp-cockpit production /
