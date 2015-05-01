@@ -16,9 +16,9 @@ function fetch_code(){
     branch=$3
     if [ -d $repo_dir ]; then
         # if true this block of code will execute
-        echo "folder exists, pulling changes"
-        (cd $repo_dir; git fetch --all; git checkout $branch; \
-         git reset origin/$branch)
+        echo "folder exists, pulling changes on branch $branch"
+        (cd $repo_dir; git fetch --all; git checkout -- .; \
+         git checkout $branch; git reset --hard origin/$branch)
     else
         echo "cloning $line"
         git clone --depth=1 --branch $branch $repo_url $repo_dir
@@ -35,12 +35,12 @@ function patch_dockerfile(){
 
 function tag_images(){
     # provide additional tags that are necessary
-    docker tag library/node-armhf node
-    docker tag library/nginx-armhf nginx
-    docker tag mazzolino/armhf-debian debian
-    docker tag mazzolino/armhf-debian debian:wheezy # for nginx
-    docker tag hominidae/armhf-ubuntu ubuntu
-    docker tag library/registry registry
+    docker tag -f library/node-armhf node
+    docker tag -f library/nginx-armhf nginx
+    docker tag -f mazzolino/armhf-debian debian
+    docker tag -f mazzolino/armhf-debian debian:wheezy # for nginx
+    docker tag -f hominidae/armhf-ubuntu ubuntu
+    docker tag -f library/registry registry
 }
 
 function build_image(){
