@@ -20,7 +20,7 @@ function push_image(){
     branch=$3
     dockerfile_path=$4
     #image_name=`echo "$image_name" | sed 's/./\L&/g'` # lowercase
-    registry_image_name=$registry/$image_name
+    registry_image_name=$registry:443/$image_name
     echo "tagging $image_name as $registry_image_name"
     docker tag $image_name $registry_image_name
     echo "pushing Docker image $registry_image_name"
@@ -29,7 +29,7 @@ function push_image(){
 
 function registry_login(){
     echo "logging into $registry"
-    docker login -u $username -p $password -e $email $registry
+    docker login -u $username -p $password -e $email https://$registry:443
 }
 
 function push_all_images(){

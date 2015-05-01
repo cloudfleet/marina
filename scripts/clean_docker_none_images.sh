@@ -12,6 +12,6 @@ fi
 
 # remove <none> images
 if [[ -n $(docker images -q --filter "dangling=true") ]]; then
-    docker rmi $(docker images -q --filter "dangling=true")
+    docker rmi -f $(docker images -q --filter "dangling=true")
     # docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
 fi
