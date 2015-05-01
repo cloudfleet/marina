@@ -22,7 +22,7 @@ function push_image(){
     #image_name=`echo "$image_name" | sed 's/./\L&/g'` # lowercase
     registry_image_name=$registry:443/$image_name
     echo "tagging $image_name as $registry_image_name"
-    docker tag $image_name $registry_image_name
+    docker tag -f $image_name $registry_image_name
     echo "pushing Docker image $registry_image_name"
     docker push $registry_image_name
 }
