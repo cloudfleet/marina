@@ -8,6 +8,7 @@
 - include: clean.yml
 - include: copy_certificates.yml
 - include: nginx_proxy.yml
+- include: schedule.yml
 - include: build_images.yml
 - include: push_images.yml
 # TODO: mount and pull image source to USB if avilable
