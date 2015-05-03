@@ -10,13 +10,12 @@
     - marina
     - schedule
 
-# - name: schedule | cron job for pushing images
-#   cron:
-#     name: "push images"
-#     minute: "0"
-#     hour: "3"
-#     job: "{{ marina.src }}/scripts/push_docker_images.sh {{ marina.src }}/scripts/docker_images.txt {{ marina.registry.user }}  {{ marina.registry.pw }} {{ marina.registry.email }} {{ marina.registry.domain }}"
-#   tags:
-#     - marina
-#     - schedule
-# # TODO: and pushing to registry
+- name: schedule | cron job for pushing images
+  cron:
+    name: "push images"
+    minute: "0"
+    hour: "3"
+    job: "{{ marina.src }}/scripts/push_docker_images.sh {{ marina.src }}/scripts/docker_images.txt {{ marina.registry.user }} {{ marina.registry.pw }} {{ marina.registry.email }} {{ marina.registry.domain }}"
+  tags:
+    - marina
+    - schedule
