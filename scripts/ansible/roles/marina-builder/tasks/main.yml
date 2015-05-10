@@ -3,14 +3,14 @@
 - include: hosts.yml
 - include: apt.yml
 - include: git.yml
-- include: build_registry_images.yml
-- include: registry.yml
+- include: build_registry_images.yml # TODO: only if this host registry
 - include: clean.yml
-- include: copy_certificates.yml
-- include: nginx_proxy.yml
 - include: schedule.yml
-- include: build_images.yml
-- include: push_images.yml
+
+# these two tasks are performed by schedule now
+# - include: build_images.yml
+# - include: push_images.yml
+
 # TODO: mount and pull image source to USB if avilable
 # - usbmount
 # TODO: only build registry (conditionally if it doesn't exist)

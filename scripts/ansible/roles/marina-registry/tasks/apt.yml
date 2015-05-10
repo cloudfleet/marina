@@ -1,0 +1,25 @@
+---
+- name: apt | install upstream docker
+  shell: "wget -qO- https://get.docker.com/ | sh"
+  tags:
+   - marina
+   - install
+   - packages
+
+- name: apt | install apt packages
+  sudo: yes
+  apt: name={{ item }} state=present update_cache=true
+  with_items:
+   #- docker.io
+   - python-pip
+  tags:
+   - marina
+   - install
+   - packages
+
+- name: pip | install pip packages
+  pip: name=docker-py
+  tags:
+    - marina
+    - install
+    - packages

@@ -1,7 +1,15 @@
 ---
-- hosts: marina
+- hosts: marina-builders
   sudo: yes
-
+  vars_files:
+    - config.yml
   roles:
-    - marina
+    - marina-builder
     - pagekite
+
+- hosts: marina-registry
+  sudo: yes
+  vars_files:
+    - config.yml
+  roles:
+    - marina-registry

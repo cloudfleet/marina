@@ -1,2 +1,5 @@
-[marina]
+[marina-builders]
 marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=marina.local
+
+[marina-registry]
+marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=46.101.128.64
