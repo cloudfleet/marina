@@ -8,4 +8,4 @@ https://github.com/cloudfleet/blimp-wellknown.git cloudfleet/blimp-wellknown mas
 https://github.com/cloudfleet/blimp-radicale.git cloudfleet/blimp-radicale master /
 https://github.com/cloudfleet/blimp-cockpit.git cloudfleet/blimp-cockpit production /
 https://github.com/cloudfleet/blimp-nginx.git cloudfleet/blimp-nginx master /
-https://github.com/cloudfleet/blimp-conduit.git cloudfleet/blimp-conduit master /
+https://github.com/cloudfleet/conduit.git cloudfleet/blimp-conduit master /
