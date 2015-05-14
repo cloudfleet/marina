@@ -1,13 +1,36 @@
 ---
 - name: apt | install apt packages
-  #sudo: yes
   apt: name={{ item }} state=present
   with_items:
    - avahi-daemon # for easier access - ssh root@marina.local
    - git-core
+  tags:
+   - marina
+   - install
+   - packages
+
+# Docker installation voodoo
+- name: apt | add Debian sid apt repository
+  apt_repository:
+    repo: 'deb http://ftp.de.debian.org/debian sid main contrib non-free'
+    state: present
+  # apt_repository:
+  #   repo: 'deb-src http://ftp.de.debian.org/debian sid main contrib non-free'
+  #   state: present
+    update_cache: true
+  tags:
+   - marina
+   - install
+   - packages
+
+- name: apt | install Docker apt packages
+  apt: name={{ item }} state=present
+  with_items:
    - docker.io
    - python-docker
   tags:
    - marina
    - install
    - packages
+
+# TODO: maybe remove sid repository right after?

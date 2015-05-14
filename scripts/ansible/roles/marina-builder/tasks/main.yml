@@ -1,6 +1,6 @@
 ---
 - hostname: name={{ marina.hostname }}
-- include: hosts.yml
+#- include: hosts.yml # TODO: only if this host registry
 - include: apt.yml
 - include: git.yml
 - include: build_registry_images.yml # TODO: only if this host registry

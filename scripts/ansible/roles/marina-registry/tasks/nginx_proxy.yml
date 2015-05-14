@@ -2,12 +2,13 @@
 - name: nginx_proxy | start the Docker Nginx proxy container
   docker:
     name: nginx-registry-proxy
-    image: cloudfleet/nginx-registry-proxy
+    image:  marvambass/nginx-registry-proxy
     ports: 443:443
     links: registry:registry
     volumes: "{{ marina.security }}:/etc/nginx/external"
     env:
       DH_SIZE: "{{ marina.dh_size }}"
+    docker_api_version: "{{ marina.docker_api }}"
   tags:
     - marina
     - nginx

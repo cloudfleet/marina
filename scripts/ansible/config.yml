@@ -14,3 +14,4 @@ marina:
     pw: "{{lookup('env','REG_PW') | default('testpw', true)}}"
     email: "{{lookup('env','REG_EMAIL') | default('test@example.com', true)}}"
     domain: "{{lookup('env','REG_DOMAIN') | default('registry.marina.io', true)}}"
+  docker_api: "1.18"

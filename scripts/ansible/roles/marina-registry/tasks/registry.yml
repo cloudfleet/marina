@@ -8,6 +8,7 @@
       STORAGE_PATH: /storage
     volumes:
       - "{{ marina.registry.storage }}:/storage"
+    docker_api_version: "{{ marina.docker_api }}"
   tags:
     - marina
     - registry
