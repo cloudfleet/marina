@@ -1,6 +1,7 @@
 [marina-builders]
-marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=marina.local
+#marina-builder-kermit ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=marina.local
+marina-builder-doublemalt ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=192.168.1.104
 
 [marina-registry]
-#marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=marina.local
-marina ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=46.101.128.64
+#marina-registry ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=marina.local
+#marina-registry-vm ansible_ssh_port=22 ansible_ssh_user=root ansible_ssh_host=46.101.128.64

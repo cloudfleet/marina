@@ -1,0 +1,11 @@
+---
+- name: tunnel_registry | copy SSH key to marina-registry
+  shell:  "ssh-copy-id {{ marina.registry.domain }}"
+  tags:
+    - marina
+    - tunnel
+- name: tunnel_registry | create reverse SSH tunnel to marina-registry
+  shell:  "ssh -R {{ marina.builder.tunnel.remote_port }}:localhost:22 {{ marina.registry.domain }}"
+  tags:
+    - marina
+    - tunnel
