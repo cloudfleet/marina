@@ -5,7 +5,7 @@
     - marina
     - tunnel
 - name: tunnel_registry | create reverse SSH tunnel to marina-registry
-  shell:  "ssh -R {{ marina.builder.tunnel.remote_port }}:localhost:22 {{ marina.registry.domain }}"
+  shell:  "ssh -R {{ builder_tunnel_port_remote }}:localhost:22 {{ marina.registry.domain }}"
   tags:
     - marina
     - tunnel

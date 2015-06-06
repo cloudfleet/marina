@@ -24,7 +24,7 @@
    - packages
 
 - name: apt | install Docker apt packages
-  apt: name={{ item }} state=present
+  apt: name={{ item }} state=present force=yes
   with_items:
    - docker.io
    - python-docker

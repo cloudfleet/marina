@@ -1,12 +1,6 @@
 ---
-marina:
-  builder:
-    tunnel:
-      remote_port: 4322
-    schedule:
-      build:
-        hour: 2
-        minute: 0
-      push:
-        hour: 3
-        minute: 0
+builder_build_hour: 2
+builder_build_minute: 0
+builder_push_hour: 3
+builder_push_minute: 0
+builder_tunnel_port_remote: 4322

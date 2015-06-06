@@ -73,3 +73,4 @@ function build_all_images(){
 }
 
 build_all_images
+(cd `dirname $0` && ./clean_docker_none_images.sh)

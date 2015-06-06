@@ -3,8 +3,8 @@
   # Ensure a job that runs at 2 exists.
   cron:
     name: "build images"
-    minute: "0"
-    hour: "2"
+    hour: "{{ builder_build_hour }}" # "{{ marina.builder.schedule.build.hour }}"
+    minute: "{{ builder_build_minute }}" # "{{ marina.builder.schedule.build.minute }}"
     job: "{{ marina.src }}/scripts/build_docker_images.sh {{ marina.src }}/scripts/docker_images.txt {{ marina.home }}/docker_images"
   tags:
     - marina
@@ -13,8 +13,8 @@
 - name: schedule | cron job for pushing images
   cron:
     name: "push images"
-    minute: "0"
-    hour: "3"
+    hour: "{{ builder_push_hour }}" # "{{ marina.builder.schedule.push.hour }}"
+    minute: "{{ builder_push_minute }}" # "{{ marina.builder.schedule.push.minute }}"
     job: "{{ marina.src }}/scripts/push_docker_images.sh {{ marina.src }}/scripts/docker_images.txt {{ marina.registry.user }} {{ marina.registry.pw }} {{ marina.registry.email }} {{ marina.registry.domain }}"
   tags:
     - marina
