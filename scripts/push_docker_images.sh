@@ -41,3 +41,5 @@ function push_all_images(){
 }
 
 push_all_images
+
+(cd `dirname $0` && ./clean_docker_none_images.sh)
