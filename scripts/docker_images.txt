@@ -10,3 +10,4 @@ https://github.com/cloudfleet/blimp-cockpit.git cloudfleet/blimp-cockpit product
 https://github.com/cloudfleet/blimp-nginx.git cloudfleet/blimp-nginx master /
 https://github.com/cloudfleet/blimp-pagekite.git cloudfleet/blimp-pagekite master /
 https://github.com/cloudfleet/conduit.git cloudfleet/blimp-conduit master /
+https://github.com/cloudfleet/doveshed.git cloudfleet/blimp-doveshed master /
