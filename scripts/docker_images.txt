@@ -12,3 +12,4 @@ https://github.com/cloudfleet/blimp-pagekite.git cloudfleet/blimp-pagekite maste
 https://github.com/cloudfleet/conduit.git cloudfleet/blimp-conduit master /
 https://github.com/cloudfleet/haraka.git cloudfleet/haraka master /
 https://github.com/cloudfleet/doveshed.git cloudfleet/blimp-doveshed master /
+https://github.com/cloudfleet/blimp-sonar.git cloudfleet/blimp-sonar master /
