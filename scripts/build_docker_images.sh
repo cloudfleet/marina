@@ -33,14 +33,20 @@ function patch_dockerfile(){
     sed -i 's/FROM\ nginx/FROM\ library\/nginx-armhf/g' Dockerfile
 }
 
+function tag_image(){
+    current_name=$1
+    new_name=$2
+    docker tag -f $current_name $new_name >/dev/null 2>&1
+}
+
 function tag_images(){
     # provide additional tags that are necessary
-    docker tag -f library/node-armhf node
-    docker tag -f library/nginx-armhf nginx
-    docker tag -f mazzolino/armhf-debian debian
-    docker tag -f mazzolino/armhf-debian debian:wheezy # for nginx
-    docker tag -f hominidae/armhf-ubuntu ubuntu
-    docker tag -f library/registry registry
+    tag_image library/node-armhf node
+    tag_image library/nginx-armhf nginx
+    tag_image mazzolino/armhf-debian debian
+    tag_image mazzolino/armhf-debian debian:wheezy # for nginx
+    tag_image hominidae/armhf-ubuntu ubuntu
+    tag_image library/registry registry
 }
 
 function build_image(){
