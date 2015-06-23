@@ -11,6 +11,7 @@ docker_images_file=$1
 build_location=${2:-/tmp/docker_images}
 
 function fetch_code(){
+    echo " - fetching code"
     repo_url=$1
     repo_dir=$2
     branch=$3
@@ -26,6 +27,7 @@ function fetch_code(){
 }
 
 function patch_dockerfile(){
+    echo " - patching Dockerfile"
     sed -i 's/FROM\ ubuntu:14.04/FROM\ hominidae\/armhf-ubuntu/g' Dockerfile
     sed -i 's/FROM\ buildpack-deps/FROM\ mazzolino\/armhf-debian/g' Dockerfile
     sed -i 's/FROM\ debian/FROM\ mazzolino\/armhf-debian/g' Dockerfile
@@ -40,6 +42,7 @@ function tag_image(){
 }
 
 function tag_images(){
+    echo " - tagging images"
     # provide additional tags that are necessary
     tag_image library/node-armhf node
     tag_image library/nginx-armhf nginx
@@ -55,14 +58,16 @@ function build_image(){
     branch=$3
     dockerfile_path=$4
     repo_dir=$build_location/$image_name
-    echo "fetching $repo_url to $repo_dir"
+    echo "Building image: $image_name" && echo "------------------------------"
+    echo " - fetching $repo_url ($branch) to $repo_dir"
     fetch_code $repo_url $repo_dir $branch
     cd $repo_dir/$dockerfile_path
     patch_dockerfile
     tag_images
     image_name=`echo "$image_name" | sed 's/./\L&/g'` # lowercase
-    echo "building Docker image as $image_name"
+    echo " - building Docker image as $image_name"
     docker build -t $image_name .
+    echo " - image built"
 }
 
 function clean_up(){
@@ -70,7 +75,7 @@ function clean_up(){
 }
 
 function build_all_images(){
-    echo "building images from $docker_images_file in $build_location"
+    echo "Building all images" && echo "===================" && echo " - from $docker_images_file in $build_location"
     while read line; do
         build_image $line
     done < $docker_images_file
