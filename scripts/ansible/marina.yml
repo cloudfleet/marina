@@ -5,7 +5,6 @@
     - config.yml
   roles:
     - marina-builder
-    - pagekite
 
 - hosts: marina-registry
   sudo: yes

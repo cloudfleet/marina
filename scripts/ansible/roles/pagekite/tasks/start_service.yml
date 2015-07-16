@@ -1,8 +1,0 @@
-- name: configure pagekite - remove existing files
-  file: path=/etc/pagekite.d/20_frontends.rc state=absent
-
-- name: configure pagekite
-  template: src=pagekite.conf dest=/etc/pagekite.d/10_account.rc
-
-- name: start pagekite
-  service: name=pagekite state=restarted

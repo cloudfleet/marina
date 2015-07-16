@@ -6,6 +6,7 @@
 #- include: build_registry_images.yml # TODO: only if this host registry
 - include: clean.yml
 - include: schedule.yml
+- include: tunnel_registry.yml
 
 # these two tasks are performed by schedule now
 # - include: build_images.yml

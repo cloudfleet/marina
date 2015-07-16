@@ -1,11 +1,24 @@
 ---
-- name: tunnel_registry | copy SSH key to marina-registry
-  shell:  "ssh-copy-id {{ marina.registry.domain }}"
+- name: tunnel_registry | create tunnel script
+  template: src=tunnel_script dest={{ marina.src }}/scripts/check-tunnel.sh
   tags:
     - marina
     - tunnel
-- name: tunnel_registry | create reverse SSH tunnel to marina-registry
-  shell:  "ssh -R {{ builder_tunnel_port_remote }}:localhost:22 {{ marina.registry.domain }}"
+
+- name: tunnel_registry | create tunnel script
+  file: path={{ marina.src }}/scripts/check-tunnel.sh mode=a+x
+  tags:
+    - marina
+    - tunnel
+
+
+
+- name: tunnel_registry | cron job for tunnel
+  cron:
+    name: "check tunnel"
+    hour: "*" # "{{ marina.builder.schedule.push.hour }}"
+    minute: "*/2" # "{{ marina.builder.schedule.push.minute }}"
+    job: "{{ marina.src }}/scripts/check-tunnel.sh"
   tags:
     - marina
     - tunnel
