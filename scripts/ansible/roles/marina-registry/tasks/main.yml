@@ -1,5 +1,0 @@
----
-- include: apt.yml
-- include: registry.yml
-- include: copy_certificates.yml
-- include: nginx_proxy.yml
