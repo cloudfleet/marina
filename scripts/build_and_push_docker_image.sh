@@ -9,7 +9,10 @@
 
 #TODO: https://github.com/docker-library/node.git /0.10/slim
 
+echo "Creating working directory ..."
 WORK_DIR = $(mktemp -d)
+echo " - working directory is $WORK_DIR"
+
 REPO_URL = $1
 REPO_BRANCH = $2
 DOCKERFILE_PATH = $3
