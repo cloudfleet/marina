@@ -32,12 +32,12 @@ cd $WORK_DIR/$DOCKERFILE_PATH
 echo " - patching Dockerfile"
 sed -ri "s/FROM\ (.*)/FROM\ $REGISTRY\/\1/g" Dockerfile
 
-echo " - building Docker image as $image_name"
+echo " - building Docker image as $IMAGE_NAME"
 docker build -t $REGISTRY/$IMAGE_NAME .
 echo " - image built"
 
 
-echo "logging into $registry"
+echo "logging into $REGISTRY"
 docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD -e $REGISTRY_EMAIL https://$REGISTRY:443
 echo "pushing image"
 docker push $REGISTRY/$IMAGE_NAME
