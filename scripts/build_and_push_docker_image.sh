@@ -30,7 +30,7 @@ git clone --depth=1 --branch $REPO_BRANCH $REPO_URL $WORK_DIR
 cd $WORK_DIR/$DOCKERFILE_PATH
 
 echo " - patching Dockerfile"
-sed -i 's/FROM\ (.*)/FROM\ $REGISTRY\/$1/g' Dockerfile
+sed -ri 's/FROM\ (.*)/FROM\ $REGISTRY\/\1/g' Dockerfile
 
 echo " - building Docker image as $image_name"
 docker build -t $REGISTRY/$IMAGE_NAME .
