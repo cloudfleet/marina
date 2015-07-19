@@ -11,6 +11,8 @@ set -e
 
 #TODO: https://github.com/docker-library/node.git /0.10/slim
 
+DIR=$( cd "$( dirname $0 )" && pwd )
+
 echo "Creating working directory ..."
 WORK_DIR=$(mktemp -d)
 echo " - working directory is $WORK_DIR"
@@ -44,4 +46,4 @@ docker push $REGISTRY/$IMAGE_NAME
 
 rm -rf $WORK_DIR
 
-(cd `dirname $0` && ./clean_docker_none_images.sh)
+(cd $DIR && ./clean_docker_none_images.sh)
