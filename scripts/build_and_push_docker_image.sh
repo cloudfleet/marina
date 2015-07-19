@@ -10,17 +10,17 @@
 #TODO: https://github.com/docker-library/node.git /0.10/slim
 
 echo "Creating working directory ..."
-WORK_DIR = $(mktemp -d)
+WORK_DIR=$(mktemp -d)
 echo " - working directory is $WORK_DIR"
 
-REPO_URL = $1
-REPO_BRANCH = $2
-DOCKERFILE_PATH = $3
-IMAGE_NAME = $4
-REGISTRY = $5
-REGISTRY_USER = $6
-REGISTRY_PASSWORD = $7
-REGISTRY_EMAIL = $8
+REPO_URL=$1
+REPO_BRANCH=$2
+DOCKERFILE_PATH=$3
+IMAGE_NAME=$4
+REGISTRY=$5
+REGISTRY_USER=$6
+REGISTRY_PASSWORD=$7
+REGISTRY_EMAIL=$8
 
 echo "Building image: $IMAGE_NAME" && echo "------------------------------"
 echo " - fetching $REPO_URL ($REPO_BRANCH) to $WORK_DIR"
