@@ -17,6 +17,7 @@ IMAGE_NAME = $4
 REGISTRY = $5
 REGISTRY_USER = $6
 REGISTRY_PASSWORD = $7
+REGISTRY_EMAIL = $8
 
 echo "Building image: $IMAGE_NAME" && echo "------------------------------"
 echo " - fetching $REPO_URL ($REPO_BRANCH) to $WORK_DIR"
@@ -32,7 +33,7 @@ echo " - image built"
 
 
 echo "logging into $registry"
-docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD -e $email https://$registry:443
+docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD -e $REGISTRY_EMAIL https://$REGISTRY:443
 echo "pushing image"
 docker push $REGISTRY/$IMAGE_NAME
 
