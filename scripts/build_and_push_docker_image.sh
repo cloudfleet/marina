@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # run as:
 # ./scripts/build_and_push_docker_image.sh \
 #    <git url> \
