@@ -28,7 +28,7 @@ REGISTRY_EMAIL=$8
 
 echo "Building image: $IMAGE_NAME" && echo "------------------------------"
 echo " - fetching $REPO_URL ($REPO_BRANCH) to $WORK_DIR"
-git clone --depth=1 --branch $REPO_BRANCH $REPO_URL $WORK_DIR
+git clone --recursive --depth=1 --branch $REPO_BRANCH $REPO_URL $WORK_DIR
 cd $WORK_DIR/$DOCKERFILE_PATH
 
 echo " - patching Dockerfile"
